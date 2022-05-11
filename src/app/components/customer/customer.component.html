@@ -1,1 +1,12 @@
-<p>customer works!</p>
+  <table class="table table-success table-striped">
+    <thead>
+   <tr>
+       <th>Customer User Id</th>
+       <th>Customer Company Name</th>
+   </tr>
+</thead>
+<tr *ngFor="let customer of customers">
+   <td>{{customer.userId}}</td>
+   <td>{{customer.companyName}}</td>
+  </tr>
+ </table>
