@@ -1,15 +1,24 @@
-<div *ngIf="dataLoaded==false" class="spinner-border text-warning" role="status">
-  <span class="visually-hidden">Loading...</span>
-</div>
-<table class="table table-success table-striped">
-  <thead>
+<table class="table ">
+  <thead class="table-success">
     <tr>
-      <th>Brand Id</th>
-      <th>Brand Name</th>
+      <th>Brands</th>
     </tr>
   </thead>
-  <tr *ngFor="let brand of brands">
-    <td>{{ brand.id }}</td>
-    <td>{{ brand.name }}</td>
-  </tr>
-</table>
+  <tr>
+    <ul class="list-group">
+      <li 
+  (click)="setDeletedCurrentBrand()" 
+  routerLink="/cars"
+  [class]="getAllBrandClass()" >All Brands</li>
+  <li      
+      routerLink="/cars/brands/{{brand.id}}"
+        *ngFor="let brand of brands"
+        (click)="setCurrentBrand(brand)"
+        [class]="getCurrentBrandClass(brand)">
+        {{ brand.name }}
+      </li>   
+     </ul>
+    </tr>
+  </table>
+ 
+<h5 *ngIf="currentBrand">{{currentBrand.name}} seçtiniz</h5>

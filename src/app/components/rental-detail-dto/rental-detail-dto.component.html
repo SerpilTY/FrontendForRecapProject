@@ -1,0 +1,24 @@
+<table class="table table-success table-striped">
+    <thead>
+   <tr>
+       <th>Id</th>
+       <th>Brand Name</th>
+       <th>Car Name</th>
+       <th>Customer First Name</th>
+       <th>Customer Last Name</th>
+       <th>Company Name</th>
+       <th>Rent Date</th>
+       <th>Return Date</th>
+   </tr>
+</thead>
+<tr *ngFor="let rentaldetaildto of rentalDetailDtos">
+   <td>{{rentaldetaildto.id}}</td>
+   <td>{{rentaldetaildto.brandName}}</td>
+   <td>{{rentaldetaildto.carName}}</td>
+   <td>{{rentaldetaildto.customerFirstName}}</td>
+   <td>{{rentaldetaildto.customerLastName}}</td>
+   <td>{{rentaldetaildto.companyName}}</td>
+   <td>{{rentaldetaildto.rentDate}}</td>
+   <td>{{rentaldetaildto.returnDate}}</td>
+  </tr>
+ </table>

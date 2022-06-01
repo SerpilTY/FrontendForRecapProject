@@ -1,26 +1,35 @@
 merhaba
-<div class="container">
+<div class="container"> 
   <app-navi></app-navi>
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-3">
       <app-brand></app-brand>
+      <app-color></app-color>
     </div>
+    <div class="col-md-9">
+    <router-outlet></router-outlet>
+  </div>
+  </div>
+  
+<!--   <div class="row">
     <div class="col-md-6"><app-color></app-color></div>
+    <div class="col-md-6">
+      <router-outlet></router-outlet>
+    </div>
   </div>
   <div class="row">
-    <div class="col-md-6"><app-customer></app-customer></div>
-  </div>
+    <div class="col-md-6">
+      <app-car-detail-dto> 
 
+      </app-car-detail-dto></div>
+      <div class="col-md-6">
+        <router-outlet></router-outlet>
+      </div>
+  </div>
   <div class="row">
     <div class="col-md-12">
       <app-rental-detail-dto></app-rental-detail-dto>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <app-car-detail-dto></app-car-detail-dto>
-    </div>
-  </div>
+  </div> -->
 </div>
 
-<router-outlet></router-outlet>

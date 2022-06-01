@@ -1,12 +1,26 @@
-<table class="table table-success table-striped">
-    <thead>
-   <tr>
-       <th>Color Id</th>
-       <th>Color Name</th>
-   </tr>
-</thead>
-<tr *ngFor="let color of colors">
-   <td>{{color.id}}</td>
-   <td>{{color.name}}</td>
-  </tr>
- </table>
+ <table class="table ">
+  <thead class="table-success">
+    <tr>
+      <th>Colors</th>
+    </tr>
+  </thead>
+  <tr>
+    <ul class="list-group">
+      <li 
+  (click)="setDeletedCurrentColor()" 
+  routerLink="/cars"
+  [class]="getAllColorClass()" >All Colors</li>
+  <li      
+      routerLink="/cars/colors/{{color.id}}"
+        *ngFor="let color of colors"
+        (click)="setCurrentColor(color)"
+        [class]="getCurrentColorClass(color)">
+        {{ color.name }}
+      </li>   
+     </ul>
+    </tr>
+  </table>
+ 
+<h5 *ngIf="currentColor">{{currentColor.name}} seçtiniz</h5>
+
+

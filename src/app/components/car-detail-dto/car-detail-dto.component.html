@@ -1,0 +1,25 @@
+<table class="table table-success table-striped">
+    <thead>
+   <tr>
+       <th>Id</th>
+       <th>Brand Name</th>
+       <th>Car Name</th>
+       <th>Color Name</th>
+       <th>Model Year</th>
+       <th>Daily Price</th>
+       <th>Description</th>
+   </tr>
+</thead>
+<tr *ngFor="let cardetaildto of carDetailDtos">
+   <td>{{cardetaildto.id}}</td>
+   <td>{{cardetaildto.brandName}}</td>
+   <td>{{cardetaildto.carName}}</td>
+   <td>{{cardetaildto.colorName}}</td>
+   <td>{{cardetaildto.modelYear}}</td>
+   <td>{{cardetaildto.dailyPrice}}</td>
+   <td>{{cardetaildto.description}}</td>
+  </tr>
+ </table>
+
+
+
