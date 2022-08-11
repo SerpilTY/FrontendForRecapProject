@@ -7,18 +7,18 @@
   <tr>
     <ul class="list-group">
       <li 
-  (click)="setDeletedCurrentBrand()" 
+  (click)="clearCurrentBrand()" 
   routerLink="/cars"
   [class]="getAllBrandClass()" >All Brands</li>
   <li      
-      routerLink="/cars/brands/{{brand.id}}"
-        *ngFor="let brand of brands"
-        (click)="setCurrentBrand(brand)"
+  (click)="setCurrentBrand(brand)"
+  *ngFor="let brand of brands"
+      routerLink="/cars/brands/{{brand.brandId}}"
         [class]="getCurrentBrandClass(brand)">
-        {{ brand.name }}
+        {{ brand.brandId }}--{{ brand.brandName }}
       </li>   
      </ul>
     </tr>
   </table>
  
-<h5 *ngIf="currentBrand">{{currentBrand.name}} seçtiniz</h5>
+<h5 *ngIf="currentBrand">{{currentBrand.brandName}} seçtiniz</h5>

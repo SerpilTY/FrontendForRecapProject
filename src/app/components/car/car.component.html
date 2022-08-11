@@ -1,9 +1,57 @@
+<div *ngIf="dataLoaded!=true" class="spinner-border text-danger" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
 
+
+<div *ngIf="dataLoaded!=false" class="container">
+
+  <div class="row ">
+
+    <div *ngFor="let carDetails of carDetails" class="col-md-4">
+
+     
+
+        <img *ngIf="carDetails.imagePath"
+         routerLink="/cars/cardetail/{{ carDetails.carId }}" 
+
+         [src]="carDetails.imagePath.length !== 0 ? imageUrl+carDetails.imagePath[0] : imageUrl + 'DefaultImage.jpg'"
+          style="object-fit: cover;"  class="card-img-top" alt="...">
+
+         <div class="card-body">
+
+          <h5 class="card-title">{{carDetails.brandName}} {{carDetails.modelName}}</h5>
+
+
+        </div>
+
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Brand:{{carDetails.brandName}}</li>
+          <li class="list-group-item">Model Name:{{carDetails.modelName}}</li>
+          <li class="list-group-item">Model Year:{{carDetails.modelYear}}</li>
+          <li class="list-group-item">Color:{{carDetails.colorName}}</li>
+          <li class="list-group-item">Price:{{carDetails.dailyPrice}} TL/Gün</li>
+          <li class="list-group-item">Description:{{carDetails.description}}</li>
+        </ul>
+
+        <div class="card-body">
+          <button routerLink="/cars/cardetail/{{ carDetails.carId }}"   type="button" class="btn btn-primary">Details</button>
+          
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+<!--
   <table class="table table-success table-striped">
     <thead>
         <tr>
             <th>Car Id</th>
-            <th>Brand Id Id</th>
+            <th>Brand Id</th>
             <th>Color Id</th>
             <th>Model Year</th>
             <th>Daily Price</th>
@@ -11,7 +59,7 @@
         </tr>
     </thead>
     <tr *ngFor="let car of cars">
-        <td>{{car.id}}</td>
+        <td>{{car.carId}}</td>
         <td>{{car.brandId}}</td>
         <td>{{car.colorId}}</td>
         <td>{{car.modelYear}}</td>
@@ -19,3 +67,4 @@
         <td>{{car.description}}</td>
     </tr>
       </table>
+    -->

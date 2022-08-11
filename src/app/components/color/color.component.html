@@ -7,20 +7,20 @@
   <tr>
     <ul class="list-group">
       <li 
-  (click)="setDeletedCurrentColor()" 
+  (click)="clearCurrentColor()" 
   routerLink="/cars"
   [class]="getAllColorClass()" >All Colors</li>
-  <li      
-      routerLink="/cars/colors/{{color.id}}"
-        *ngFor="let color of colors"
-        (click)="setCurrentColor(color)"
-        [class]="getCurrentColorClass(color)">
-        {{ color.name }}
+  <li     
+  (click)="setCurrentColor(color)" 
+  *ngFor="let color of colors"
+      routerLink="/cars/colors/{{color.colorId}}"
+      [class]="getCurrentColorClass(color)">
+        {{ color.colorId }}--{{ color.colorName }}
       </li>   
      </ul>
     </tr>
   </table>
  
-<h5 *ngIf="currentColor">{{currentColor.name}} seçtiniz</h5>
+<h5 *ngIf="currentColor">{{currentColor.colorName}} seçtiniz</h5>
 
 

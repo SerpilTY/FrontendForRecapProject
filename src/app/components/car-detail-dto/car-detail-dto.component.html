@@ -1,25 +1,70 @@
+<div class="card" style="width:100%;margin-top: 20px;">
+
+  <div class="row"style="max-height: 80%;">
+
+  </div>
+    <carousel  style="height:95%; width: 100%;" >
+      <slide *ngFor="let imagePath of carImagePaths; let index=index" >
+        <img [src]="imageUrl+imagePath" alt="image slide"class="image-fluid" style=" height:400px;width: 100%; object-fit: cover">
+    
+        <div class="carousel-caption">
+          <h4>Görsel: {{index+1}} </h4>
+          <p></p>
+        </div>
+      </slide>
+    </carousel>
+  
+      <!-- car detail sayfası araç detay bilgileiri -->
+      <div *ngFor="let car of cars" class="card-body">
+        <div class="card-body detailsFontInfo">
+
+            <h5 class="card-title">
+            {{ car?.brandName }} || {{ car?.modelName }}
+            </h5>
+            
+        </div>
+    
+        <ul class="list-group list-group-flush  detailsFontInfo">
+            <li class="list-group-item"><b>Color :</b> {{ car?.colorName }}</li>
+            
+            <li class="list-group-item  detailsFontInfo"> <b>Model Year :</b> {{ car?.modelYear }}</li>
+
+            <li class="list-group-item  detailsFontInfo"> <b>Daily Price :</b> {{ car?.dailyPrice | currency: "USD":true:"1.2-2" }}</li>
+
+            <li class="list-group-item  detailsFontInfo"><b>Description:</b> {{ car?.description }}</li>
+
+        </ul>
+    </div>
+    
+
+</div>
+
+
+
+
+<!--
+
+
 <table class="table table-success table-striped">
-    <thead>
-   <tr>
-       <th>Id</th>
-       <th>Brand Name</th>
-       <th>Car Name</th>
-       <th>Color Name</th>
-       <th>Model Year</th>
-       <th>Daily Price</th>
-       <th>Description</th>
-   </tr>
+  <thead>
+ <tr>
+     <th>Id</th>
+     <th>Brand Name</th>
+     <th>Car Name</th>
+     <th>Color Name</th>
+     <th>Model Year</th>
+     <th>Daily Price</th>
+     <th>Description</th>
+ </tr>
 </thead>
-<tr *ngFor="let cardetaildto of carDetailDtos">
-   <td>{{cardetaildto.id}}</td>
-   <td>{{cardetaildto.brandName}}</td>
-   <td>{{cardetaildto.carName}}</td>
-   <td>{{cardetaildto.colorName}}</td>
-   <td>{{cardetaildto.modelYear}}</td>
-   <td>{{cardetaildto.dailyPrice}}</td>
-   <td>{{cardetaildto.description}}</td>
-  </tr>
- </table>
-
-
-
+<tr *ngFor="let cardetaildto of cars">
+ <td>{{cardetaildto.carId}}</td>
+ <td>{{cardetaildto.brandName}}</td>
+ <td>{{cardetaildto.modelName}}</td>
+ <td>{{cardetaildto.colorName}}</td>
+ <td>{{cardetaildto.modelYear}}</td>
+ <td>{{cardetaildto.dailyPrice}}</td>
+ <td>{{cardetaildto.description}}</td>
+</tr>
+</table>
+-->

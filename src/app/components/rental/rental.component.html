@@ -1,15 +1,17 @@
     <table class="table table-success table-striped">
      <thead>
     <tr>
-        <th>Rental Id</th>
-        <th>Customer Id</th>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Customer</th>
         <th>Rent Date</th>
         <th>Return Date</th>
     </tr>
 </thead>
-<tr *ngFor="let rental of rentals">
-    <td>{{rental.id}}</td>
-    <td>{{rental.customerId}}</td>
+<tr *ngFor="let rental of rentalDetails">
+    <td>{{rental.brandName}}</td>
+    <td>{{rental.modelName}}</td>
+    <td>{{rental.customerFirstName}} {{rental.customerLastName}}</td>
     <td>{{rental.rentDate}}</td>
     <td>{{rental.returnDate}}</td>
 </tr>
