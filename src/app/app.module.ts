@@ -14,6 +14,9 @@ import { CarDetailDtoComponent } from './components/car-detail-dto/car-detail-dt
 import { RentalDetailDtoComponent } from './components/rental-detail-dto/rental-detail-dto.component';
 import { CarImageComponent } from './components/car-image/car-image.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { CarFilterPipe } from './pipes/car-filter.pipe';
+import { ColorFilterPipe } from './pipes/color-filter.pipe';
+import { BrandFilterPipe } from './pipes/brand-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     NaviComponent,
     CarDetailDtoComponent,
     RentalDetailDtoComponent,
-    CarImageComponent
+    CarImageComponent,
+    CarFilterPipe,
+    ColorFilterPipe,
+    BrandFilterPipe
   ],
   imports: [
     BrowserModule,

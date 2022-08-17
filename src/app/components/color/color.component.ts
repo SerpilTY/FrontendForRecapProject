@@ -10,6 +10,7 @@ import { ColorService } from 'src/app/services/color.service';
 })
 export class ColorComponent implements OnInit {
   colors: Color[] = [];
+  colorFilter:""
   currentColor?: Color;
   dataLoaded = false;
 

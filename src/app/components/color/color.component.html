@@ -12,7 +12,7 @@
   [class]="getAllColorClass()" >All Colors</li>
   <li     
   (click)="setCurrentColor(color)" 
-  *ngFor="let color of colors"
+  *ngFor="let color of colors | colorFilter :colorFilter "
       routerLink="/cars/colors/{{color.colorId}}"
       [class]="getCurrentColorClass(color)">
         {{ color.colorId }}--{{ color.colorName }}

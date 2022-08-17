@@ -10,9 +10,8 @@
   (click)="clearCurrentBrand()" 
   routerLink="/cars"
   [class]="getAllBrandClass()" >All Brands</li>
-  <li      
-  (click)="setCurrentBrand(brand)"
-  *ngFor="let brand of brands"
+  <li (click)="setCurrentBrand(brand)"
+  *ngFor="let brand of brands|brandFilter:brandFilter"
       routerLink="/cars/brands/{{brand.brandId}}"
         [class]="getCurrentBrandClass(brand)">
         {{ brand.brandId }}--{{ brand.brandName }}
