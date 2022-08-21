@@ -1,3 +1,14 @@
+ 
+ <div class="collapse show" id="color-collapse">
+  <div class="card-header"><label for="colorFilter" class="form-label">Search Color</label>
+    <input
+      type="text"
+      class="form-control"
+      id="colorFilter"
+      placeholder="Enter search term.."
+      [(ngModel)]="colorFilter"
+    />
+ 
  <table class="table ">
   <thead class="table-success">
     <tr>
@@ -12,7 +23,7 @@
   [class]="getAllColorClass()" >All Colors</li>
   <li     
   (click)="setCurrentColor(color)" 
-  *ngFor="let color of colors | colorFilter :colorFilter "
+  *ngFor="let color of colors | colorPipe:colorFilter "
       routerLink="/cars/colors/{{color.colorId}}"
       [class]="getCurrentColorClass(color)">
         {{ color.colorId }}--{{ color.colorName }}

@@ -2,6 +2,31 @@
   <span class="visually-hidden">Loading...</span>
 </div>
 
+<div class="row mb-3">
+  <div class="col-md-4">
+
+      <select [(ngModel)]="brandFilter" class="form-select" aria-label="Default select example">
+      <option value=0>Select Brand</option>
+      <option *ngFor="let brand of brands" [value]="brand.brandId" [selected]="getSelectedBrand(brand.brandId)">{{brand.brandName}}</option>
+      
+    </select>
+
+  </div>
+
+  <div class="col-md-4">
+    <select  [(ngModel)]="colorFilter" class="form-select" aria-label="Default select example">
+      <option value=0>Select Color</option>
+      <option *ngFor="let color of colors" [value]="color.colorId" [selected]="getSelectedColor(color.colorId)">{{color.colorName}}</option>
+      
+    </select>
+  </div>
+
+  <div class="col-md-3">
+  <button routerLink="/cars/color/{{colorFilter}}/brand/{{brandFilter}}" class="btn btn-primary" type="button"  >Filter</button>
+  </div>
+
+</div>
+
 
 <div *ngIf="dataLoaded!=false" class="container">
 
