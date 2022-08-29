@@ -22,6 +22,7 @@ export class CarComponent implements OnInit {
   colorFilter:number=0;
   brands:Brand[] = [];
   brandFilter:number=0;
+  carDetailFilter:string=""
 
   imageUrl:string="https://localhost:44355/Uploads/images/" 
   dataLoaded = false;

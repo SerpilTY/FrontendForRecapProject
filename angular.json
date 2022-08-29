@@ -28,7 +28,8 @@
             ],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [
                "./node_modules/jquery/dist/jquery.min.js", 
@@ -108,5 +109,8 @@
       }
     }
   },
-  "defaultProject": "recap"
+  "defaultProject": "recap",
+  "cli": {
+    "analytics": "89760bc6-582f-46c0-bde6-7a533985accd"
+  }
 }

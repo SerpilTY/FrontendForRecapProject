@@ -11,11 +11,12 @@ export class RentalDetailDtoComponent implements OnInit {
   rentalDetailDtos: RentalDetailDto[] = [];
   dataLoaded = false;
 
-  //rentalResponseModel: RentalResponseModel;
+ 
   constructor(private rentalDetailDtoService: RentalDetailDtoService) {}
 
   ngOnInit(): void {
     this.getRentalDetailDtos();
+    this.getCarRentalDetails()
   }
 
   getRentalDetailDtos() {
@@ -24,5 +25,11 @@ export class RentalDetailDtoComponent implements OnInit {
       this.dataLoaded = true;
     });
   }
-}
 
+  getCarRentalDetails() {
+    this.rentalDetailDtoService.getCarRentalDetails().subscribe((response) => {
+      this.rentalDetailDtos = response.data;
+      this.dataLoaded = true;
+    });
+}
+}

@@ -15,7 +15,7 @@ export class CustomerComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCustomers();
-  }
+    }
 
   getCustomers() {
     this.customerService.getCustomers().subscribe((response) => {
@@ -23,4 +23,5 @@ export class CustomerComponent implements OnInit {
       this.dataLoaded = true;
     });
   }
-}
+
+  }

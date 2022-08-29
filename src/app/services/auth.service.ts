@@ -17,6 +17,7 @@ export class AuthService {
   user: User
   token :string | null= ""  
   decodedTokenKey: any;
+  
 
   apiUrl='https://localhost:44355/api/Auth/'
 
@@ -82,8 +83,8 @@ export class AuthService {
 
   getCustomerbyUserId(userId : number){
     this.customerService.getCustomerByUserId(userId).subscribe(response =>{
-      console.log(response.data)
-      this.user.customerId = response.data.customerId
+      console.log(response.data);
+      this.user.customerId = response.data.customerId ;
       this.user.companyName = response.data.companyName;
     })
   }

@@ -16,5 +16,10 @@ export class RentalDetailDtoService {
   getRentalDetailDtos():Observable<ListResponseModel<RentalDetailDto>> {
     return this.httpClient.get<ListResponseModel<RentalDetailDto>>(this.apiUrl);
     }
+
+    getCarRentalDetails(): Observable<ListResponseModel<RentalDetailDto>> {
+      let newPath = this.apiUrl + 'getrentaldetails';
+      return this.httpClient.get<ListResponseModel<RentalDetailDto>>(newPath);
+    }
 }
 
