@@ -9,4 +9,5 @@ export interface CarDetailDto {
     modelYear: number;
     dailyPrice: number;
     description: string;
+    isRentable:boolean;
   }

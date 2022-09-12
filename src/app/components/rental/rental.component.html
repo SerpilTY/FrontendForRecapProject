@@ -1,4 +1,46 @@
-    <table class="table table-success table-striped">
+<div *ngIf="state==1" class="modal-body">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="mb-3 col-5">
+          <div class="mt-2">
+            <label><h6>Rent Date :</h6></label>
+          </div>
+          <div class="ml-2">
+            <input type="date" class="form-control inputSize" [(ngModel)]="rentDate" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"
+            (change)="onChangeEvent($event); checkReturnDate()" min="{{minDate}}"/>
+          </div>
+        </div>
+        <div class="mb-3 col-5">
+          <div class="mt-2">
+            <label><h6>Return Date :</h6></label>
+          </div>
+          <div class="ml-2">
+            <input type="date" class="form-control inputSize" [(ngModel)]="returnDate" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"
+                   disabled='{{!firstDateSelected}}' min="{{minDate}}"  (input)='totalAmount()' />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer mt-3">
+      <button (click)="addRentalCar()" type="button" class="btn btn-secondary">
+        Rent
+      </button>
+  
+      <button type="button" class="btn  btn-danger" data-bs-dismiss="modal">
+        Close
+      </button>
+    </div>
+  </div>
+  
+  
+  <div *ngIf="state==2" class="modal-body">
+    <div class="container">
+        <app-payment [customer] = "customerId"></app-payment>
+  
+    </div>
+  </div>  
+  
+  <!--  <table class="table table-success table-striped">
      <thead>
     <tr>
         <th>Brand</th>
@@ -15,4 +57,4 @@
     <td>{{rental.rentDate}}</td>
     <td>{{rental.returnDate}}</td>
 </tr>
-  </table>
+  </table> -->

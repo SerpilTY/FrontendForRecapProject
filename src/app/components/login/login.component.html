@@ -1,0 +1,60 @@
+<div class="modal-body">
+  <div class="container-fluid">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <body class="text-center">
+                <main class="form-signin">
+                  <form [formGroup]="loginForm">
+                    <h1 class="h3 mb-3 fw-normal fontInfoHeader">Sign In</h1>
+                    <div class="form-floating mb-2 fontInfo">
+                      <input
+                        type="email"
+                        formControlName="email"
+                        class="form-control"
+                        id="floatingInput"
+                        placeholder="name@example.com"
+                      />
+                      <label for="floatingInput">Email</label>
+                    </div>
+                    <div class="form-floating mb-2 fontInfo">
+                      <input
+                        type="password"
+                        formControlName="password"
+                        class="form-control"
+                        id="floatingPassword"
+                        placeholder="Password"
+                      />
+                      <label for="floatingPassword">Şifreniz</label>
+                    </div>
+
+                    <button
+                      class="w-100 btn btn-primary mt-4"
+                      type="submit"
+                      (click)="login()"
+                      [disabled]="!loginForm.valid"
+                    >
+                      <h5>Sign in</h5>
+                    </button>
+                  </form>
+                </main>
+              </body>
+            </div>
+
+            <div class="col-md-6">
+              <button type="button" class="btn btn-primary">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
