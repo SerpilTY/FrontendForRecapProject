@@ -13,7 +13,7 @@
     "@angular/animations": "~14.2.1",
     "@angular/common": "~14.2.1",
     "@angular/compiler": "~14.2.1",
-    "@angular/core": "~14.2.1",
+    "@angular/core": "^14.2.1",
     "@angular/forms": "~14.2.1",
     "@angular/platform-browser": "~14.2.1",
     "@angular/platform-browser-dynamic": "~14.2.1",
@@ -24,12 +24,12 @@
     "jquery": "^3.6.0",
     "ngx-bootstrap": "^8.0.0",
     "ngx-toastr": "^14.0.0",
-    "rxjs": "~7.5.0",
+    "rxjs": "~7.5.5",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~13.3.3",
+    "@angular-devkit/build-angular": "~14.2.1",
     "@angular/cli": "^14.2.2",
     "@angular/compiler-cli": "~14.2.1",
     "@types/jasmine": "~3.10.0",
