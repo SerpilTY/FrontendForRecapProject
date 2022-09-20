@@ -1,0 +1,73 @@
+<div class="content">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header"><h5 class="title">Add Car</h5></div>
+        <div class="card-body">
+          <form [formGroup]="carAddForm">
+              <div class="form-group">
+                <label for="modelName" class="col-sm-2 col-form-label col-form-label-sm">Model Name</label>
+               <input type="text"
+                id="modelName" 
+               formControlName="modelName"
+               class="form-control"
+               placeholder="Model Name"/>
+              </div>
+              <div class="form-group">
+                <label for="modelYear" class="col-sm-2 col-form-label col-form-label-sm">Model Year</label>
+                <input type="text"
+                 id="modelYear" 
+                formControlName="modelYear"
+                class="form-control"
+                placeholder="Model Year"/>
+               </div>
+               <div class="form-group">
+                <label for="dailyPrice" class="col-sm-2 col-form-label col-form-label-sm">Daily Price</label>
+                <input type="number"
+                 id="dailyPrice" 
+                formControlName="dailyPrice"
+                class="form-control"
+                placeholder="Daily Price"/>
+               </div>
+               <div class="form-group">
+                <label for="description" class="col-sm-2 col-form-label col-form-label-sm">Description</label>
+                <input type="text"
+                 id="description" 
+                formControlName="description"
+                class="form-control"
+                placeholder="Description"/>
+               </div>
+             
+               <div class="form-group">
+                <label for="findex" class="col-sm-2 col-form-label col-form-label-sm">Findex Point</label>
+                <input type="number"
+                 id="findex" 
+                formControlName="findex"
+                class="form-control"
+                placeholder="Findeks Point"/>
+               </div>
+               <div class="row">
+                <div class="col-md-6">
+                  <label for="Color" class="col-sm-2 col-form-label col-form-label-sm">Color</label>
+                    <select formControlName="colorId"  class="form-select" aria-label="Select Color"> 
+                        <option [ngValue]=0>Select Color</option> 
+                        <option [ngValue]='color.colorId' *ngFor="let color of colors"> {{color.colorName}} </option>
+                    </select>
+                  </div>
+                  
+                  <div class="col-md-6">
+                    <label for="Brand" class="col-sm-2 col-form-label col-form-label-sm">Brand</label>
+                    <select formControlName="brandId" class="form-select" aria-placeholder="Select Brand">
+                        <option [ngValue]=0>Select Brand</option>
+                        <option [ngValue]="brand.brandId" *ngFor="let brand of brands"  >{{brand.brandName}}</option>
+                      </select>
+                  </div>
+
+               </div>
+              <br>
+              <button style="float:right" type="button" (click)= "addCar()" class="btn 
+              btn-outline-dark">Add Car</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

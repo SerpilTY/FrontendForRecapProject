@@ -54,7 +54,7 @@
           class="btn text-center btn-success"
           data-bs-toggle="modal"
           data-bs-target="#loginModalFront"
-          [disabled]="carDetail?.isRentable !== true"
+          [disabled]="carDetail.isRentable !== true"
           *ngIf="!isAuthenticated()"
         >
           Login
@@ -67,7 +67,7 @@
           class="btn text-center btn-primary"
           data-bs-toggle="modal"
           data-bs-target="#rentalModalFront"
-          [disabled]="carDetail?.isRentable !== true"
+          [disabled]="carDetail.isRentable !== true"
           *ngIf="isAuthenticated()"
         >
           Rent This Car

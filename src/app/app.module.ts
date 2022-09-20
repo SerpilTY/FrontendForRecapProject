@@ -26,6 +26,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { JwtModule } from '@auth0/angular-jwt';
+import { CarAddComponent } from './components/admin/car-add/car-add.component';
+import { BrandAddComponent } from './components/admin/brand-add/brand-add.component';
+import { ColorAddComponent } from './components/admin/color-add/color-add.component';
 
 export function tokenGetter() {
   return localStorage.getItem("access_token");
@@ -48,6 +51,9 @@ export function tokenGetter() {
     BrandFilterPipe,
     PaymentComponent,
     LoginComponent,
+    CarAddComponent,
+    BrandAddComponent,
+    ColorAddComponent,
   ],
   imports: [
     BrowserModule,
