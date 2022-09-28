@@ -53,13 +53,18 @@ export class CarAddComponent implements OnInit {
   addCar(){
     if(this.carAddForm.valid){let carModel = Object.assign({},this.carAddForm.value)
   this.carService.addCar(carModel).subscribe(response=>{
-    console.log(response);
-    this.toastrService.success(response.message,"Successfull")
-  })
+     this.toastrService.success(response.message,"Successfull")
+  }, responseError=>{
+    if(responseError.error.Errors.length>0){
+        for (let i = 0; i < responseError.error.Errors.length; i++) {
+        this.toastrService.error(responseError.error.Errors[i].ErrorMessage," Validation Failure Occured");        
+      }
+    }
+    
+})
 }
     else{
       this.toastrService.error("Form has absent values.")
-
     }
   }
 }
