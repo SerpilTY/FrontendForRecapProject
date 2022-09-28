@@ -19,6 +19,17 @@ export class ColorService {
     addColor(color: Color):Observable<ResponseModel>{
       return this.httpClient.post<ResponseModel>(this.apiUrl+"add",color)
     }
+    deleteColor(color:Color):Observable<ResponseModel>{
+    
+      let newPath=this.apiUrl+"Colors/Delete"
+       return this.httpClient.post<ResponseModel>(newPath,color)
+   
+     }
+   
+     updateColor(color:Color):Observable<ResponseModel>{
+       let newPath = this.apiUrl + "Colors/Update"
+       return this.httpClient.post<ResponseModel>(newPath,color);
+     }
 }
 
 

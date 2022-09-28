@@ -1,0 +1,16 @@
+<div class="justify-content-center">
+    <form [formGroup]="brandUpdateForm">
+      <div class="row">
+  
+        <div class="col-md-6">
+          <label for="updateBrandName" style="font-size: 18px" class="fontInfo"> Brand Name: </label>
+          <input type="text" id="updateBrandName" class="form-control fontInfo inputSize" formControlName="brandName" placeholder="Brand Name"
+                 aria-label="updateBrandName" aria-describedby="basic-addon2">
+        </div> 
+      </div>
+    </form>
+    <div class="row mt-3">
+      <button (click)="updateBrand()" class="btn brandEditButton fontInfo m-auto w-50 mt-3"> Update </button>
+    </div>
+  </div>
+  

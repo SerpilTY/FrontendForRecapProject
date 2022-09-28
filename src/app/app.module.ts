@@ -26,9 +26,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { JwtModule } from '@auth0/angular-jwt';
-import { CarAddComponent } from './components/admin/car-add/car-add.component';
-import { BrandAddComponent } from './components/admin/brand-add/brand-add.component';
-import { ColorAddComponent } from './components/admin/color-add/color-add.component';
+import { CarAddComponent } from './components/admin/add/car-add/car-add.component';
+import { BrandAddComponent } from './components/admin/add/brand-add/brand-add.component';
+import { ColorAddComponent } from './components/admin/add/color-add/color-add.component';
+import { BrandEditComponent } from './components/admin/edit/brand-edit/brand-edit.component';
+import { ColorEditComponent } from './components/admin/edit/color-edit/color-edit.component';
+import { CarEditComponent } from './components/admin/edit/car-edit/car-edit.component';
 
 export function tokenGetter() {
   return localStorage.getItem("access_token");
@@ -54,6 +57,9 @@ export function tokenGetter() {
     CarAddComponent,
     BrandAddComponent,
     ColorAddComponent,
+    BrandEditComponent,
+    ColorEditComponent,
+    CarEditComponent
   ],
   imports: [
     BrowserModule,

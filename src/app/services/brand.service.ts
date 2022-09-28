@@ -11,6 +11,8 @@ import { ResponseModel } from '../models/responseModel';
 export class BrandService {
 
   apiUrl="https://localhost:44355/api/";
+currentBrand:Brand;
+
   constructor(private httpClient: HttpClient) { }
   
   getBrands():Observable<ListResponseModel<Brand>> {
@@ -24,5 +26,15 @@ export class BrandService {
       
       addBrand(brand: Brand):Observable<ResponseModel>{
         return this.httpClient.post<ResponseModel>(this.apiUrl+"brands/add", brand)
+      }
+
+      deleteBrand(brand:Brand): Observable<ResponseModel>{
+        let newPath=this.apiUrl+ "brands/update";
+        return this.httpClient.post<ResponseModel>(newPath, brand);
+      }
+
+      updateBrand(brand:Brand): Observable<ResponseModel>{
+        let newPath=this.apiUrl+"brands/update";
+        return this.httpClient.post<ResponseModel>(newPath, brand);
       }
 }

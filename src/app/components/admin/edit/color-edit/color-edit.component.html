@@ -1,0 +1,26 @@
+<div class="justify-content-center">
+    <form [formGroup]="colorUpdateForm">
+      <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header"><h5 class="title">Update Color</h5></div>
+              <div class="card-body">
+                <form  [formGroup]="colorUpdateForm">
+                    <div class="form-group">
+                      <label for="colorName" class="col-sm-2 col-form-label col-form-label-sm">Color Name</label>
+                    <input type="hidden" formControlName="colorId"/>
+                     <input type="text"
+                      id="colorName" 
+                     formControlName="colorName"
+                     class="form-control"
+                     placeholder="Renk Adı"/>  
+                    </div>
+                    <br>
+                    <button style="float:right;" type="button" (click)="updateColor()"class="btn btn-outline-dark">Update </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+     
+  
