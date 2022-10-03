@@ -10,6 +10,10 @@ import { Router } from '@angular/router';
 import { CarDetailDto } from 'src/app/models/carDetailDto';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
+import { CarComponent } from '../car/car.component';
+import { CarService } from 'src/app/services/car.service';
+import { Car } from 'src/app/models/car';
+CarComponent
 
 @Component({
   selector: 'app-rental',
@@ -18,6 +22,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class RentalComponent implements OnInit {
   rentalDetails: RentalDetailDto[] = [];
+  car: Car [] = [];
   dataLoaded = false;
   customerDetails:Customer[] = [];
   rentDate:Date;
@@ -36,6 +41,7 @@ export class RentalComponent implements OnInit {
     private paymentService: PaymentService,
     private datePipe: DatePipe,
     private router: Router,
+    private carService: CarService,
     //private modalService:NgbModal,
     //private activeModal:NgbModal ,
     private toastrService: ToastrService,

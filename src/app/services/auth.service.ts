@@ -88,4 +88,18 @@ export class AuthService {
       this.user.companyName = response.data.companyName;
     })
   }
+
+  isAdmin() {
+    let isAdmin = false
+    if (this.loggedIn()) {
+      let claims = this.user.roles?.toString().split(',') 
+
+      claims?.map(role => {
+        if (role.toLocaleLowerCase().indexOf("admin") !== -1) {
+          isAdmin = true;
+        }
+      })
+    }
+    return isAdmin;
+  }
 }
