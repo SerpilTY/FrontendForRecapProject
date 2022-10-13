@@ -19,7 +19,7 @@ export class AuthService {
   decodedTokenKey: any;
   
 
-  apiUrl='https://localhost:44355/api/Auth/'
+  apiUrl='https://localhost:44355/api/auth/'
 
   constructor(private httpClient: HttpClient,
     private customerService: CustomerService,
@@ -102,4 +102,9 @@ export class AuthService {
     }
     return isAdmin;
   }
+
+  isAuthenticated() {
+    if(localStorage.getItem("token")){return true;}
+  else { return false}
+}
 }
