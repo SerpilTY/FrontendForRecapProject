@@ -31,10 +31,10 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.addLoginForm();
+    this.createLoginForm();
   }
 
-  addLoginForm() {
+  createLoginForm() {
     this.loginForm = this.formBuilder.group({
       email: ['', Validators.required],
       password: ['', Validators.required],
@@ -43,27 +43,20 @@ export class LoginComponent implements OnInit {
 
   login() {
     if (this.loginForm.valid) {
-      let loginModel = Object.assign({}, this.loginForm.value);
+      console.group(this.loginForm.value);
+       let loginModel = Object.assign({}, this.loginForm.value);
 
       this.authService.login(loginModel).subscribe(
         (response) => {
-          this.localStorageService.saveToken(response.data.token);
-          this.authService.decodedTokenKey = this.authService.decodedToken(
-            response.data.token
-          );
-          this.authService.getUser();
-          this.closeModal('loginModalFront');
-          this.toastrService.success('Logged In.');
-        },
-        (responseError) => {
-          this.toastrService.error(responseError.errors, 'Invalid Password .');
-        }
-      );
-    } else {
-      this.toastrService.error('Form invalid.');
-    }
-  }
+          this.toastrService.info(response.message)
+          localStorage.setItem("token", response.data.token)
+        }, responseError=>{ this.toastrService.error(responseError.error)})
+        
+  }}
+
   closeModal(id: string) {
     this.modalService.dismissAll(id);
   }
 }
+ 
+
