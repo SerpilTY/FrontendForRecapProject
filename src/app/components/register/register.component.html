@@ -1,0 +1,31 @@
+<body class="text-center">
+    <main class="form-signin">
+      <form [formGroup]="registerForm">
+        <h1 class="h3 mb-3 fw-normal fontInfoHeader">Sign Up</h1>
+    
+        <div class="form-floating mb-2 fontInfo">
+          <input type="text" formControlName="firstName" class="form-control fontInfo inputSize mb-2" id="firstName" placeholder="First Name">
+          <label for="firstName">First Name</label>
+        </div>
+    
+        <div class="form-floating mb-2 fontInfo">
+          <input type="text" formControlName="lastName" class="form-control fontInfo inputSize mb-2" id="lastName" placeholder="Last Name">
+          <label for="lastName">Last Name</label>
+        </div>
+    
+        <div class="form-floating mb-2 fontInfo">
+          <input type="email" formControlName="email" class="form-control fontInfo inputSize mb-2" id="email" placeholder="name@example.com">
+          <label for="email">Email address</label>
+        </div>
+    
+        <div class="form-floating mb-2 fontInfo">
+          <input type="password" formControlName="password" class="form-control fontInfo inputSize mb-2" id="password" placeholder="Password">
+          <label for="password">Password</label>
+        </div>
+    
+        <button class="w-100 btn registerButton fontInfo mt-4" type="submit" (click)="register()" [disabled]="!registerForm.valid"><h5>Sign Up</h5></button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+      </form>
+    </main>
+    </body>
+    

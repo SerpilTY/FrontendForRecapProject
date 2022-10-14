@@ -13,6 +13,7 @@ import { CarEditComponent } from './components/admin/edit/car-edit/car-edit.comp
 
 import { LoginComponent } from './components/login/login.component';
 import { LoginGuard } from './guards/login.guard';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: CarComponent },
@@ -54,6 +55,8 @@ const routes: Routes = [
     canActivate: [LoginGuard],
   },
   { path: 'login', component: LoginComponent },
+
+  {path: 'register' , component:RegisterComponent}
 ];
 
 @NgModule({

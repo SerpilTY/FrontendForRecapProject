@@ -32,6 +32,8 @@ import { ColorAddComponent } from './components/admin/add/color-add/color-add.co
 import { BrandEditComponent } from './components/admin/edit/brand-edit/brand-edit.component';
 import { ColorEditComponent } from './components/admin/edit/color-edit/color-edit.component';
 import { CarEditComponent } from './components/admin/edit/car-edit/car-edit.component';
+import { RegisterComponent } from './components/register/register.component';
+import { StatusComponent } from './components/status/status.component';
 
 export function tokenGetter() {
   return localStorage.getItem("access_token");
@@ -59,7 +61,9 @@ export function tokenGetter() {
     ColorAddComponent,
     BrandEditComponent,
     ColorEditComponent,
-    CarEditComponent
+    CarEditComponent,
+    RegisterComponent,
+    StatusComponent
   ],
   imports: [
     BrowserModule,

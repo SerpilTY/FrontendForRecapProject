@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Observable } from 'rxjs';
 import { LoginModel } from '../models/loginModel';
+import { RegisterModel } from '../models/registerModel';
 import { SingleResponseModel } from '../models/singleResponseModel';
 import { TokenModel } from '../models/tokenModel';
 import { User } from '../models/user';
@@ -40,6 +41,11 @@ export class AuthService {
     } else {
       return false;
     }
+  }
+
+  register(registerModel: RegisterModel): Observable<SingleResponseModel<TokenModel>> {
+    let newPath = this.apiUrl + 'register';
+    return this.httpClient.post<SingleResponseModel<TokenModel>>(newPath, registerModel);
   }
 
   getUser() {
