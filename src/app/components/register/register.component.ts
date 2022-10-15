@@ -35,13 +35,13 @@ export class RegisterComponent implements OnInit {
       lastName: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required],
-    });
+    })
   }
 
   register(){
     if (this.registerForm.valid){
       let registerModel = Object.assign({},this.registerForm.value);
-      this.authService.register(registerModel).subscribe (response=>{
+      this.authService.register(registerModel).subscribe(response=>{
         this.localStorageService.saveToken(response.data.token)
         this.registerForm.reset();
         this.authService.getUser()
