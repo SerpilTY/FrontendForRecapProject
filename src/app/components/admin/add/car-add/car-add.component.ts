@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder,FormControl,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-//  import { timeStamp } from 'console'; 
-
-//  import { ComponentLoader } from 'ngx-bootstrap/component-loader';
+import { ComponentLoader } from 'ngx-bootstrap/component-loader';
 import { ToastrService } from 'ngx-toastr';
 import { Brand } from 'src/app/models/brand';
 import { Color } from 'src/app/models/color';

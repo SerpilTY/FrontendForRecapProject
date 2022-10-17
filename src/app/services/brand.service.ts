@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ListResponseModel } from '../models/listResponseModel';
 import { Brand } from '../models/brand';
 import { ResponseModel } from '../models/responseModel';
+import { EventEmitter, Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,7 @@ export class BrandService {
 
   apiUrl="https://localhost:44355/api/";
 currentBrand:Brand;
+statusUpdated= new EventEmitter();
 
   constructor(private httpClient: HttpClient) { }
   
@@ -36,5 +37,9 @@ currentBrand:Brand;
       updateBrand(brand:Brand): Observable<ResponseModel>{
         let newPath=this.apiUrl+"brands/update";
         return this.httpClient.post<ResponseModel>(newPath, brand);
+      }
+
+      setCurrentBrand(brand: Brand){
+        this.currentBrand = brand;
       }
 }

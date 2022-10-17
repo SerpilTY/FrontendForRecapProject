@@ -6,6 +6,6 @@ export interface Car{
     dailyPrice:number,
     description:string,
     modelName:string,
-    findexNumber:number
+    minFindexPoint:number
 }
  

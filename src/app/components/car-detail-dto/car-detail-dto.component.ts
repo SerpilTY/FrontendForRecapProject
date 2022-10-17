@@ -34,8 +34,6 @@ export class CarDetailDtoComponent implements OnInit {
     private authService: AuthService ,
     private toastrService: ToastrService,
     private router : Router,
-    
-
     )
     { }
 

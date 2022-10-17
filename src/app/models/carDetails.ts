@@ -10,4 +10,5 @@ export interface CarDetails {
     colorName:string;
     imagePath:string[];
     isRentable:boolean;
+    minFindexPoint:number
 }

@@ -10,4 +10,5 @@ export interface CarDetailDto {
     dailyPrice: number;
     description: string;
     isRentable:boolean;
+    minFindexPoint:number
   }

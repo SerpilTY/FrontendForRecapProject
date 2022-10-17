@@ -1,8 +1,8 @@
 <div class="collapse show" id="brand-collapse">
   <div class="card-header">
-
-    <label for="brandFilter" class="form-label mb-3">Search Brand</label>
-
+<div class="text-center" >
+    <label >Search Brand</label>
+  </div>
     <input
       type="text"
       class="form-control"
@@ -27,7 +27,7 @@
   *ngFor="let brand of brands|brandFilter:brandFilter"
       routerLink="/cars/brands/{{brand.brandId}}"
         [class]="getCurrentBrandClass(brand)">
-        {{ brand.brandId }}--{{ brand.brandName }}
+        {{ brand.brandName }}
       </li>   
      </ul>
     </tr>
